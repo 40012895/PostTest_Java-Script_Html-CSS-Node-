@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" ></script>  
+    <script>
+        $(document).ready(function()
+        {
+            $('#show').click(function()
+            {
+   
+                $.get("hotel.json", function(data, status)
+                {
+
+                    data.forEach(book => {
+                        var str='';
+                        for(const prop in book){
+                            str+=prop+' '+book[prop]+' '+'<br>';
+                        }
+                        $('#mydiv').append(str).append('<br>');
+                    });
+                    
+                 });
+    
+            }); 
+         
+            $('#bycity').click(function()
+            {
+                var url='http://localhost:3000/showByCity';
+                var authchoice=$('#text').val();
+                
+                $.get(url,{city:authchoice},function(data,status)
+                {
+                    data.forEach(book => {
+                        var str='';
+                        for(const prop in book)
+                        {
+                            str+=prop+' '+book[prop]+' '+'<br>';
+                        }
+                        $('#mydiv').append(str).append('<br>');
+                    });
+                })
+            });
+
+            
+        });
+    </script>
+</head>
+<body>
+
+    <input type="button" value="List of Hotels" id="show"><br>
+    Hotel by City <input type="text" name="text1" id="text">
+    <input type="button" value="Show Hotel by City" id="bycity">
+    <br>
+    <div id="mydiv" style="background-color: rgb(255, 153, 0);"></div>
+    <div id="mydiv"></div>
+    <label for="all option">Hotels by type</label>
+    <select name="dropdown" id="drop1" onchange="myFunction()">
+      <option value="select" >--Select--</option>
+      <option value="veg" id=" veg" >veg</option>
+      <option value="Mobile1">Non-veg</option>
+    </select>
+    <label for="all option">Hotels by cuisine</label>
+    <select name="dropdown" id="drop1" onchange="myFunction()">
+      <option value="select" >--Select--</option>
+      <option value="chiense" id=" chiense" >chiense</option>
+      <option value="Indian">Indian</option>
+    </select>
+
+    <div id="view" style="padding: 50px; font-family: arial;">
+</body>
+</html>

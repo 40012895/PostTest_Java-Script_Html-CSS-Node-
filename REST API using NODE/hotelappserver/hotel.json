@@ -1,0 +1,26 @@
+[
+    {
+        "Name":"Baba Ka Dhaba",
+        "city":"Mumbai",
+        "Type":"Veg",
+        "Cuisine":"Indian"
+    },
+    {
+        "Name":"Mao",
+        "city":"Banglore",
+        "Type":"Nov-veg",
+        "Cuisine":"Indian"
+    },
+    {
+        "Name":"Albek",
+        "city":"Raigad",
+        "Type":1000,
+        "Cuisine":"Chinese"
+    },
+    {
+        "Name":"Sushant Chinese center",
+        "city":"hydrabad",
+        "Type":1000,
+        "Cuisine":"Chinese"
+    }
+]
